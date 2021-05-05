@@ -1,3 +1,21 @@
 <h1>Books</h1>
-
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Body</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+<% @books.each do |book| %>
+  </tbody>
+</table>
 <h2>New book</h2>
+<%= form_with model:@book, local:true do |f| %>
+<h4>title</h4>
+<%= f.text_field :title %>
+<h4>body</h4>
+<%= f.text_area :bodt %>
+<%= f.submit 'Create Book' %>
+<% end %>
