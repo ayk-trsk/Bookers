@@ -1,6 +1,7 @@
 class BooksController < ApplicationController
   
 def show
+  @book = Book.find(params[:id])
 end
 
 def index
@@ -15,6 +16,13 @@ def create
 end
 
 def edit
+  @book = Book.find(params[:id])
+end
+
+def update
+  book = Book.find(params[:id])
+  book.update(blog_params)
+  redirect_to blog_path(blog)
 end
 
 private
